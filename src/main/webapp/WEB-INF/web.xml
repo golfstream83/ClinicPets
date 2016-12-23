@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+              version="2.4">
+
+    <display-name>ClinicPets</display-name>
+
+    <filter>
+        <filter-name>ClientAuthFilter</filter-name>
+        <filter-class>ru.tulin.servlets.ClientAuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ClientAuthFilter</filter-name>
+        <url-pattern>*</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>ClientViewServlet</servlet-name>
+        <servlet-class>ru.tulin.servlets.ClientViewServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClientViewServlet</servlet-name>
+        <url-pattern>/client/view</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ClinicServlet</servlet-name>
+        <servlet-class>ru.tulin.servlets.ClinicServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ClinicServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientAddServlet</servlet-name>
+        <servlet-class>ru.tulin.servlets.ClientAddServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClientAddServlet</servlet-name>
+        <url-pattern>/client/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientEditServlet</servlet-name>
+        <servlet-class>ru.tulin.servlets.ClientEditServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClientEditServlet</servlet-name>
+        <url-pattern>/client/edit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>ClientDeleteServlet</servlet-name>
+    <servlet-class>ru.tulin.servlets.ClientDeleteServlet</servlet-class>
+</servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClientDeleteServlet</servlet-name>
+        <url-pattern>/client/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClientSigninServlet</servlet-name>
+        <servlet-class>ru.tulin.servlets.ClientSigninServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ClientSigninServlet</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+
+
